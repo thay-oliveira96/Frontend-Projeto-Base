@@ -1,0 +1,16 @@
+.container {
+   height: 100%; 
+}
+/*Esse item é as configurações do menu lateral como cor, tamanho e etc.*/
+.sidenav {
+   width: 13rem;
+   color: white;
+   background: rgb(2,0,36);
+   background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+img {
+   width: 100%;
+   height: 7rem;
+   margin: .8rem auto 1rem auto;
+}
