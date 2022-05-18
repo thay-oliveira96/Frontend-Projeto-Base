@@ -26,9 +26,12 @@
     </mat-drawer>
   
     <div class="sidenav-content">
+      <!--Cabeçalho da tela Home-->
+      <app-header></app-header>
       <button class="menu mat-elevation-v8" (click)="drawer.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
+      <!--Tela Home é uma classe filha da NAV-->
       <router-outlet></router-outlet>
     </div>
     
