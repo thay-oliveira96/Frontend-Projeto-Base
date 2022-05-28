@@ -13,6 +13,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { OrdemListComponent } from './components/ordens/ordem-list/ordem-list.component';
+import { OrdensCreateComponent } from './components/ordens/ordens-create/ordens-create.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
       {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
 
       {path: 'ordens', component: OrdemListComponent},
+      {path: 'ordens/create', component: OrdensCreateComponent},
     ]
   }
 ];
