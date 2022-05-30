@@ -10,5 +10,6 @@ export interface Chamado {
     cliente:            any;
     gestor:             any;
     nomeCliente:     string;
+    nomeGestor:      string;
     nomeTecnico:     string;
  }
