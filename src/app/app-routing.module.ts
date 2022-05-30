@@ -12,8 +12,12 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
-import { OrdemListComponent } from './components/ordens/ordem-list/ordem-list.component';
-import { OrdensCreateComponent } from './components/ordens/ordens-create/ordens-create.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { GestorListComponent } from './components/gestor/gestor-list/gestor-list.component';
+import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
+import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
+import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,8 +35,13 @@ const routes: Routes = [
       { path: 'clientes/update/:id', component: ClienteUpdateComponent},
       {path: 'clientes/delete/:id', component: ClienteDeleteComponent},
 
-      {path: 'ordens', component: OrdemListComponent},
-      {path: 'ordens/create', component: OrdensCreateComponent},
+      {path: 'gestores', component: GestorListComponent},
+      {path: 'gestores/create', component: GestorCreateComponent},
+      {path: 'gestores/update/:id', component: GestorUpdateComponent},
+      {path: 'gestores/delete/:id', component: GestorDeleteComponent},
+
+      {path: 'chamados', component: ChamadoListComponent},
+      {path: 'chamados/create', component: ChamadoCreateComponent},
     ]
   }
 ];

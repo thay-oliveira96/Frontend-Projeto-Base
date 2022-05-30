@@ -43,8 +43,12 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
-import { OrdemListComponent } from './components/ordens/ordem-list/ordem-list.component';
-import { OrdensCreateComponent } from './components/ordens/ordens-create/ordens-create.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { GestorListComponent } from './components/gestor/gestor-list/gestor-list.component';
+import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
+import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
+import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
 
 @NgModule({
   declarations: [
@@ -61,8 +65,12 @@ import { OrdensCreateComponent } from './components/ordens/ordens-create/ordens-
     ClienteDeleteComponent,
     ClienteListComponent,
     ClienteUpdateComponent,
-    OrdemListComponent,
-    OrdensCreateComponent
+    ChamadoCreateComponent,
+    ChamadoListComponent,
+    GestorListComponent,
+    GestorCreateComponent,
+    GestorUpdateComponent,
+    GestorDeleteComponent
   ],
   imports: [
     BrowserModule,
