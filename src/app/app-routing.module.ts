@@ -18,6 +18,7 @@ import { GestorListComponent } from './components/gestor/gestor-list/gestor-list
 import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
 import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
 
       {path: 'chamados', component: ChamadoListComponent},
       {path: 'chamados/create', component: ChamadoCreateComponent},
+      {path: 'chamados/update/:id', component: ChamadoUpdateComponent},
     ]
   }
 ];
