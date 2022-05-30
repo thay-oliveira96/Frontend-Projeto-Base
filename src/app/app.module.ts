@@ -49,6 +49,7 @@ import { GestorListComponent } from './components/gestor/gestor-list/gestor-list
 import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
 import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-
     GestorListComponent,
     GestorCreateComponent,
     GestorUpdateComponent,
-    GestorDeleteComponent
+    GestorDeleteComponent,
+    ChamadoUpdateComponent
   ],
   imports: [
     BrowserModule,
