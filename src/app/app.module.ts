@@ -50,6 +50,7 @@ import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-
 import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ChamadoUpdateComponent } from './components/chamado/chamado-update/cham
     GestorCreateComponent,
     GestorUpdateComponent,
     GestorDeleteComponent,
-    ChamadoUpdateComponent
+    ChamadoUpdateComponent,
+    ChamadoReadComponent
   ],
   imports: [
     BrowserModule,
