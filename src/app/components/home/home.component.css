@@ -1,9 +1,16 @@
 .card {
     width: 90%;
+<<<<<<< HEAD
     margin: 1rem auto;
     margin: auto;
     background-color: rgb(235, 235, 235);
 }
+=======
+    margin: auto;
+    background-color: rgb(235, 235, 235);
+}
+
+>>>>>>> 5342cf76759e9f01d876477d78d768c0082d7c33
 img {
     height: 20rem;
 }
