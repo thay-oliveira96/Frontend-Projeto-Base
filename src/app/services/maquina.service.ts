@@ -24,6 +24,6 @@ export class MaquinaService {
   }
 
   update(maquina: Maquina): Observable<Maquina> {
-    return this.http.put<Maquina>(`${API_CONFIG.baseUrl}/chamados/${maquina.id}`, maquina);
+    return this.http.put<Maquina>(`${API_CONFIG.baseUrl}/maquinas/${maquina.id}`, maquina);
   }
 }
