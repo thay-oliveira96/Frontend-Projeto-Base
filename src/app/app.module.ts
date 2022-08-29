@@ -51,6 +51,10 @@ import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
+import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
+import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
+import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
+import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-list.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,11 @@ import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-
     GestorUpdateComponent,
     GestorDeleteComponent,
     ChamadoUpdateComponent,
-    ChamadoReadComponent
+    ChamadoReadComponent,
+    MaquinaCreateComponent,
+    MaquinaUpdateComponent,
+    MaquinaDeleteComponent,
+    MaquinaListComponent
   ],
   imports: [
     BrowserModule,
