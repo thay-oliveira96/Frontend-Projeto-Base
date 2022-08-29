@@ -20,6 +20,10 @@ import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
+import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-list.component';
+import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
+import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
+import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -46,6 +50,11 @@ const routes: Routes = [
       {path: 'chamados/create', component: ChamadoCreateComponent},
       {path: 'chamados/update/:id', component: ChamadoUpdateComponent},
       {path: 'chamados/read/:id', component: ChamadoReadComponent},
+
+      {path: 'maquinas', component: MaquinaListComponent},
+      {path: 'maquinas/create', component: MaquinaCreateComponent},
+      {path: 'maquinas/update/:id', component: MaquinaUpdateComponent},
+      {path: 'chamados/delete/:id', component: MaquinaDeleteComponent},
     ]
   }
 ];
