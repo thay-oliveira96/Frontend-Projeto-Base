@@ -54,7 +54,7 @@ const routes: Routes = [
       {path: 'maquinas', component: MaquinaListComponent},
       {path: 'maquinas/create', component: MaquinaCreateComponent},
       {path: 'maquinas/update/:id', component: MaquinaUpdateComponent},
-      {path: 'chamados/delete/:id', component: MaquinaDeleteComponent},
+      {path: 'maquinas/delete/:id', component: MaquinaDeleteComponent},
     ]
   }
 ];

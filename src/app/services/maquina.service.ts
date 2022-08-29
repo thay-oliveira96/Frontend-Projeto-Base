@@ -26,4 +26,8 @@ export class MaquinaService {
   update(maquina: Maquina): Observable<Maquina> {
     return this.http.put<Maquina>(`${API_CONFIG.baseUrl}/maquinas/${maquina.id}`, maquina);
   }
+
+  delete(id: any): Observable<Maquina> {
+    return this.http.delete<Maquina>(`${API_CONFIG.baseUrl}/maquinas/${id}`);
+  }
 }
