@@ -55,6 +55,10 @@ import { MaquinaCreateComponent } from './components/maquina/maquina-create/maqu
 import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
 import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
 import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-list.component';
+import { DepartamentosCreateComponent } from './components/departamentos/departamentos-create/departamentos-create.component';
+import { DepartamentosListComponent } from './components/departamentos/departamentos-list/departamentos-list.component';
+import { DepartamentosUpdateComponent } from './components/departamentos/departamentos-update/departamentos-update.component';
+import { DepartamentosDeleteComponent } from './components/departamentos/departamentos-delete/departamentos-delete.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +86,11 @@ import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-
     MaquinaCreateComponent,
     MaquinaUpdateComponent,
     MaquinaDeleteComponent,
-    MaquinaListComponent
+    MaquinaListComponent,
+    DepartamentosCreateComponent,
+    DepartamentosListComponent,
+    DepartamentosUpdateComponent,
+    DepartamentosDeleteComponent
   ],
   imports: [
     BrowserModule,
