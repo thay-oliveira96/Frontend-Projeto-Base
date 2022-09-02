@@ -24,6 +24,10 @@ import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-
 import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
 import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
 import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
+import { DepartamentosListComponent } from './components/departamentos/departamentos-list/departamentos-list.component';
+import { DepartamentosCreateComponent } from './components/departamentos/departamentos-create/departamentos-create.component';
+import { DepartamentosUpdateComponent } from './components/departamentos/departamentos-update/departamentos-update.component';
+import { DepartamentosDeleteComponent } from './components/departamentos/departamentos-delete/departamentos-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -55,6 +59,11 @@ const routes: Routes = [
       {path: 'maquinas/create', component: MaquinaCreateComponent},
       {path: 'maquinas/update/:id', component: MaquinaUpdateComponent},
       {path: 'maquinas/delete/:id', component: MaquinaDeleteComponent},
+
+      {path: 'departamentos', component: DepartamentosListComponent},
+      {path: 'departamentos/create', component: DepartamentosCreateComponent},
+      {path: 'departamentos/update/:id', component: DepartamentosUpdateComponent},
+      {path: 'departamentos/delete/:id', component: DepartamentosDeleteComponent},
     ]
   }
 ];
