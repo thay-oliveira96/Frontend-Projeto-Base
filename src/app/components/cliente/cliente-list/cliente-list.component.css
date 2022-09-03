@@ -10,10 +10,7 @@ table {
   mat-form-field {
       width: 100%;
   }
-
-  button {
-      width: 100%;
-  }
+  
   h1 {
     width: 100%;
     text-align: center;
@@ -25,4 +22,10 @@ table {
 
 .delete {
     color: red;
+}
+
+button {
+    width: 100%;
+    background: rgb(19, 174, 19);
+    color: white;
 }

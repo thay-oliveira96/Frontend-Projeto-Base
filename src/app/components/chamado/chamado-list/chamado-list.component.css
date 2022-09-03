@@ -12,8 +12,10 @@
  }
  
  button {
-    width: 100%;
- }
+   width: 100%;
+   background: rgb(19, 174, 19);
+   color: white;
+}
  
  h1 {
     width: 100%;
@@ -29,6 +31,11 @@
     color: red;
  }
  
+ .add {
+   color: white;
+   margin: auto 0.2rem;
+}
+
  mat-radio-group {
     display: flex;
     justify-content: space-around;
