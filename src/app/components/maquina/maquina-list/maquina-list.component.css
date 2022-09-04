@@ -12,8 +12,10 @@
  }
  
  button {
-    width: 100%;
- }
+   width: 100%;
+   background: rgb(19, 174, 19);
+   color: white;
+}
  
  h1 {
     width: 100%;
