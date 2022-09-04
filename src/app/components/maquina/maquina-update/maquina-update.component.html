@@ -16,18 +16,18 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
 
-          <mat-form-field class="fullwidth" appearance="legacy">
-            <mat-label>Departamentos</mat-label>
-            <input
-            [(ngModel)]="maquina.departamento"
-            name="departamento"
-            [formControl]="departamento"
-            required
-            matInput 
-            placeholder="Ex.. departamento"
-            maxlength="60">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          </mat-form-field>
+          <div class="departamento">
+            <mat-form-field class="full-width" appearance="outline">
+               <mat-label>Departamento ({{ maquina.nomeDepartamento }})</mat-label>
+               <mat-select 
+               [(ngModel)]="maquina.departamento"
+               name="departamento"
+               [formControl]="departamento" 
+               required>
+                 <mat-option *ngFor="let dep of departamentos" value="{{ dep.id }}">{{ dep.nome }}</mat-option>
+               </mat-select>
+             </mat-form-field>
+          </div>
 
           <mat-form-field class="fullwidth" appearance="legacy">
             <mat-label>Observações</mat-label>

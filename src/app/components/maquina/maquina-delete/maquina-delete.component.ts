@@ -15,7 +15,8 @@ export class MaquinaDeleteComponent implements OnInit {
     id:               '',
     nome:             '',
     departamento:     '',
-    observacoes:      ''
+    observacoes:      '',
+    nomeDepartamento: ''
   }
 
   constructor(

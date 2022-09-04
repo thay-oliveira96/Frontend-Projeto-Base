@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Departamentos } from 'src/app/models/departamentos';
 import { Maquina } from 'src/app/models/maquina';
+import { DepartamentoService } from 'src/app/services/departamentos.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
 
 @Component({
@@ -15,8 +17,11 @@ export class MaquinaCreateComponent implements OnInit {
   maquina: Maquina = {
     nome:  '',
     departamento:      '',
-    observacoes:      ''
+    observacoes:      '',
+    nomeDepartamento: ''
     }
+
+    departamentos: Departamentos[] = [];
 
   nome:     FormControl = new FormControl(null, [Validators.required]);
   observacoes:FormControl = new FormControl(null, [Validators.required]);
@@ -25,11 +30,12 @@ export class MaquinaCreateComponent implements OnInit {
   constructor(
     private maquinaService: MaquinaService,
     private toastService:    ToastrService,
+    private departamentoService: DepartamentoService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-   
+    this.findAllDepartamentos();
   }
 
   create(): void {
@@ -40,6 +46,12 @@ export class MaquinaCreateComponent implements OnInit {
       console.log(ex);
       
       this.toastService.error(ex.error.error);
+    })
+  }
+
+  findAllDepartamentos(): void {
+    this.departamentoService.findAll().subscribe(resposta => {
+      this.departamentos = resposta;
     })
   }
 

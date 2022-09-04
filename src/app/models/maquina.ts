@@ -1,6 +1,7 @@
 export interface Maquina {
     id?:                any;
     nome?:           string;
-    departamento?:   string;
+    departamento?:   any;
     observacoes:     string;
+    nomeDepartamento: String;
  }

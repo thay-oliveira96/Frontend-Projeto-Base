@@ -13,21 +13,21 @@
           matInput 
           placeholder="Ex.. nome da maquina"
           maxlength="60">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-icon matSuffix>groups_2</mat-icon>
         </mat-form-field>
 
-        <mat-form-field class="fullwidth" appearance="legacy">
-          <mat-label>Departamento</mat-label>
-          <input
-          [(ngModel)]="maquina.departamento"
-          name="departamento"
-          [formControl]="departamento"
-          required
-          matInput 
-          placeholder="Ex.. nome do departamento"
-          maxlength="60">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field>
+        <div class="departamento">
+          <mat-form-field class="fullwidth" appearance="legacy">
+             <mat-label>Selecione o Departamento</mat-label>
+             <mat-select class="selecao"
+             [(ngModel)]="maquina.departamento"
+             name="departamento"
+             [formControl]="departamento" 
+             required>
+               <mat-option *ngFor="let dep of departamentos" value="{{ dep.id }}">{{ dep.nome }}</mat-option>
+             </mat-select>
+           </mat-form-field>
+        </div>
 
         <mat-form-field class="fullwidth" appearance="legacy">
           <mat-label>Observações</mat-label>
@@ -39,7 +39,7 @@
           matInput 
           placeholder="Ex.. Observações"
           maxlength="60">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-icon matSuffix>edit_note</mat-icon>
         </mat-form-field>
 
         <button (click)="create()" [disabled]="!validaCampos()" class="fullwidth mat-elevation-z4" mat-flat-button color="primary">Cadastrar</button>

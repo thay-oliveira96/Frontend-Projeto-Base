@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Departamentos } from 'src/app/models/departamentos';
 import { Maquina } from 'src/app/models/maquina';
+import { DepartamentoService } from 'src/app/services/departamentos.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
 
 @Component({
@@ -16,8 +18,11 @@ export class MaquinaUpdateComponent implements OnInit {
     id:               '',
     nome:             '',
     departamento:     '',
-    observacoes:      ''
+    observacoes:      '',
+    nomeDepartamento: '',
   }
+
+  departamentos: Departamentos[] = [];
 
   nome: FormControl =  new FormControl(null, Validators.minLength(3));
   departamento: FormControl =       new FormControl(null, Validators.required);
@@ -25,6 +30,7 @@ export class MaquinaUpdateComponent implements OnInit {
 
   constructor(
     private service: MaquinaService,
+    private departamentoService: DepartamentoService,
     private toast:    ToastrService,
     private router:          Router,
     private route:   ActivatedRoute,
@@ -33,6 +39,7 @@ export class MaquinaUpdateComponent implements OnInit {
   ngOnInit(): void {
     this.maquina.id = this.route.snapshot.paramMap.get('id');
     this.findById();
+    this.findAllDepartamentos();
    }
 
   findById(): void {
@@ -56,6 +63,12 @@ export class MaquinaUpdateComponent implements OnInit {
     })
   }
   
+  findAllDepartamentos(): void {
+    this.departamentoService.findAll().subscribe(resposta => {
+      this.departamentos = resposta;
+    })
+  }
+
   validaCampos(): boolean {
     return this.nome.valid 
   }
