@@ -13,6 +13,18 @@
          placeholder="Ex. Trocar bateria de notebook">
        </mat-form-field>
      </form>
+
+     <div class="maquina">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>MAQUINA ({{ chamado.nomeMaquina }})</mat-label>
+         <mat-select 
+         [disabled]="true"
+         [(ngModel)]="chamado.maquina"
+         name="maquina">
+           <mat-option>{{ chamado.nomeMaquina }}</mat-option>
+         </mat-select>
+       </mat-form-field>
+    </div>
  
      <div class="status-prioridade">
        <mat-form-field appearance="outline">

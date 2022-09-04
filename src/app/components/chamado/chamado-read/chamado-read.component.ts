@@ -20,9 +20,11 @@ export class ChamadoReadComponent implements OnInit {
     tecnico:     '',
     cliente:     '',
     gestor:      '', 
+    maquina:     '',
     nomeCliente: '',
     nomeGestor:  '',
-    nomeTecnico: ''
+    nomeTecnico: '',
+    nomeMaquina:  ''
   }
 
   constructor(

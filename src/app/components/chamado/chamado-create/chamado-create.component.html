@@ -15,6 +15,19 @@
          placeholder="Ex. Trocar bateria de notebook">
        </mat-form-field>
      </form>
+
+     <div class="maquina">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Selecione a Maquina</mat-label>
+         <mat-select 
+         [(ngModel)]="chamado.maquina"
+         name="maquina"
+         [formControl]="maquina" 
+         required>
+           <mat-option *ngFor="let maq of maquinas" value="{{ maq.id }}">{{ maq.nome }}</mat-option>
+         </mat-select>
+       </mat-form-field>
+    </div>
  
      <div class="status-prioridade">
        <mat-form-field appearance="outline">
