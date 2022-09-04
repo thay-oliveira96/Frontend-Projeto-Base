@@ -28,6 +28,10 @@ import { DepartamentosListComponent } from './components/departamentos/departame
 import { DepartamentosCreateComponent } from './components/departamentos/departamentos-create/departamentos-create.component';
 import { DepartamentosUpdateComponent } from './components/departamentos/departamentos-update/departamentos-update.component';
 import { DepartamentosDeleteComponent } from './components/departamentos/departamentos-delete/departamentos-delete.component';
+import { DefeitosListComponent } from './components/defeitos/defeitos-list/defeitos-list.component';
+import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
+import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
+import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -64,6 +68,11 @@ const routes: Routes = [
       {path: 'departamentos/create', component: DepartamentosCreateComponent},
       {path: 'departamentos/update/:id', component: DepartamentosUpdateComponent},
       {path: 'departamentos/delete/:id', component: DepartamentosDeleteComponent},
+
+      {path: 'defeitos', component: DefeitosListComponent},
+      {path: 'defeitos/create', component: DefeitosCreateComponent},
+      {path: 'defeitos/update/:id', component: DefeitosUpdateComponent},
+      {path: 'defeitos/delete/:id', component: DefeitosDeleteComponent},
     ]
   }
 ];

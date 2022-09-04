@@ -40,7 +40,7 @@ export class DepartamentosUpdateComponent implements OnInit {
   update(): void {
     this.service.update(this.departamentos).subscribe(() => {
       this.toast.success('Departamento atualizado com sucesso', 'Update');
-      this.router.navigate(['empresas'])
+      this.router.navigate(['departamentos'])
     }, ex => {
       if(ex.error.errors) {
         ex.error.errors.forEach(element => {
