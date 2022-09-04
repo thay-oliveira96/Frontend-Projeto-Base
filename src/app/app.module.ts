@@ -59,6 +59,10 @@ import { DepartamentosCreateComponent } from './components/departamentos/departa
 import { DepartamentosListComponent } from './components/departamentos/departamentos-list/departamentos-list.component';
 import { DepartamentosUpdateComponent } from './components/departamentos/departamentos-update/departamentos-update.component';
 import { DepartamentosDeleteComponent } from './components/departamentos/departamentos-delete/departamentos-delete.component';
+import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
+import { DefeitosListComponent } from './components/defeitos/defeitos-list/defeitos-list.component';
+import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
+import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +94,11 @@ import { DepartamentosDeleteComponent } from './components/departamentos/departa
     DepartamentosCreateComponent,
     DepartamentosListComponent,
     DepartamentosUpdateComponent,
-    DepartamentosDeleteComponent
+    DepartamentosDeleteComponent,
+    DefeitosCreateComponent,
+    DefeitosListComponent,
+    DefeitosUpdateComponent,
+    DefeitosDeleteComponent
   ],
   imports: [
     BrowserModule,
