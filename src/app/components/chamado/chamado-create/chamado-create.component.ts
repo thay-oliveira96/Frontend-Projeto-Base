@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
+import { Defeitos } from 'src/app/models/defeitos';
 import { Gestor } from 'src/app/models/gestor';
 import { Maquina } from 'src/app/models/maquina';
 import { Tecnico } from 'src/app/models/tecnico';
 import { ChamadoService } from 'src/app/services/chamado.service';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { DefeitoService } from 'src/app/services/defeitos.service';
 import { GestorService } from 'src/app/services/gestor.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
@@ -23,7 +25,7 @@ export class ChamadoCreateComponent implements OnInit {
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
-    titulo:      '',
+    defeitos:      '',
     observacoes: '',
     tecnico:     '',
     cliente:     '',
@@ -32,17 +34,19 @@ export class ChamadoCreateComponent implements OnInit {
     nomeCliente: '',
     nomeTecnico: '',
     nomeGestor: '',
-    nomeMaquina: ''
+    nomeMaquina: '',
+    nomeDefeitos: ''
   }
 
   clientes: Cliente[] = []
   tecnicos: Tecnico[] = []
   gestores: Gestor[] = []
   maquinas: Maquina[] = []
+  defeitoso: Defeitos[] = []
 
   prioridade: FormControl = new FormControl(null, [Validators.required]);
   status:     FormControl = new FormControl(null, [Validators.required]);
-  titulo:     FormControl = new FormControl(null, [Validators.required]);
+  defeitos:     FormControl = new FormControl(null, [Validators.required]);
   observacoes:FormControl = new FormControl(null, [Validators.required]);
   tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
@@ -55,6 +59,7 @@ export class ChamadoCreateComponent implements OnInit {
     private tecnicoService: TecnicoService,
     private gestorService:  GestorService,
     private maquinaService: MaquinaService,
+    private defeitoService: DefeitoService,
     private toastService:    ToastrService,
     private router: Router,
   ) { }
@@ -63,6 +68,7 @@ export class ChamadoCreateComponent implements OnInit {
     this.findAllClientes();
     this.findAllTecnicos();
     this.findAllGestores();
+    this.findAllDefeitos();
     this.findAllMaquina();
   }
 
@@ -101,8 +107,14 @@ export class ChamadoCreateComponent implements OnInit {
     })
   }
 
+  findAllDefeitos(): void {
+    this.defeitoService.findAll().subscribe(resposta => {
+      this.defeitoso = resposta;
+    })
+  }
+
   validaCampos(): boolean {
-    return this.prioridade.valid && this.status.valid && this.titulo.valid 
+    return this.prioridade.valid && this.status.valid && this.defeitos.valid 
        && this.observacoes.valid && this.tecnico.valid && this.cliente.valid 
        && this.gestor.valid && this.maquina.valid
   }

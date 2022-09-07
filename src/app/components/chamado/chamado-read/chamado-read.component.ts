@@ -15,7 +15,7 @@ export class ChamadoReadComponent implements OnInit {
 
     prioridade:  '',
     status:      '',
-    titulo:      '',
+    defeitos:      '',
     observacoes: '',
     tecnico:     '',
     cliente:     '',
@@ -24,7 +24,8 @@ export class ChamadoReadComponent implements OnInit {
     nomeCliente: '',
     nomeGestor:  '',
     nomeTecnico: '',
-    nomeMaquina:  ''
+    nomeMaquina:  '',
+    nomeDefeitos: ''
   }
 
   constructor(

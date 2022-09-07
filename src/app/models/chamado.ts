@@ -4,7 +4,7 @@ export interface Chamado {
     dataFechamento?: string;
     prioridade:      string;
     status:          string;
-    titulo:          string;
+    defeitos:          any;
     observacoes:     string;
     tecnico:            any;
     cliente:            any;
@@ -14,4 +14,5 @@ export interface Chamado {
     nomeGestor:      string;
     nomeTecnico:     string;
     nomeMaquina:     String;
+    nomeDefeitos:    String;
  }

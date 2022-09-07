@@ -3,18 +3,18 @@
     <h1 class="full-width">Abertura de Ordem de Manutenção</h1>
     <img class="full-width" src="assets/img/chamado-create.svg" alt="Chamado image">
  
-    <form class="form">
-       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Título da Ordem</mat-label>
-         <input 
-         [(ngModel)]="chamado.titulo"
-         name="titulo"
-         [formControl]="titulo"
-         required
-         matInput 
-         placeholder="Ex. Trocar bateria de notebook">
+    <div class="defeitos">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Selecione o Titulo</mat-label>
+         <mat-select 
+         [(ngModel)]="chamado.defeitos"
+         name="defeitos"
+         [formControl]="defeitos" 
+         required>
+           <mat-option *ngFor="let def of defeitoso" value="{{ def.id }}">{{ def.descricao }}</mat-option>
+         </mat-select>
        </mat-form-field>
-     </form>
+    </div>
 
      <div class="maquina">
       <mat-form-field class="full-width" appearance="outline">
