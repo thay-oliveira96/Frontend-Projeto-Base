@@ -32,6 +32,10 @@ import { DefeitosListComponent } from './components/defeitos/defeitos-list/defei
 import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
+import { PecasListComponent } from './components/pecas/pecas-list/pecas-list.component';
+import { PecasCreateComponent } from './components/pecas/pecas-create/pecas-create.component';
+import { PecasUpdateComponent } from './components/pecas/pecas-update/pecas-update.component';
+import { PecasDeleteComponent } from './components/pecas/pecas-delete/pecas-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -73,6 +77,11 @@ const routes: Routes = [
       {path: 'defeitos/create', component: DefeitosCreateComponent},
       {path: 'defeitos/update/:id', component: DefeitosUpdateComponent},
       {path: 'defeitos/delete/:id', component: DefeitosDeleteComponent},
+
+      {path: 'pecas', component: PecasListComponent},
+      {path: 'pecas/create', component: PecasCreateComponent},
+      {path: 'pecas/update/:id', component: PecasUpdateComponent},
+      {path: 'pecas/delete/:id', component: PecasDeleteComponent},
     ]
   }
 ];
