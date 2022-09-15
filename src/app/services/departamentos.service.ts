@@ -30,5 +30,5 @@ export class DepartamentoService {
 
   delete(id: any): Observable<Departamentos> {
     return this.http.delete<Departamentos>(`${API_CONFIG.baseUrl}/departamentos/${id}`);
-  }
+  }   
 }
