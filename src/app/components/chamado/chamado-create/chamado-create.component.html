@@ -53,8 +53,21 @@
         matInput 
         placeholder="Ex. Algum comportamento que a maquina está que seja fora do normal..."></textarea>
       </mat-form-field>
+      <mat-radio-group aria-label="Select an option" class="full-width"
+      [(ngModel)]="chamado.parada"
+        name="observacoes"
+        [formControl]="observacoes"
+        required
+        class="observacoes" 
+        matInput 
+        color="primary"
+      >
+        <mat-radio-button value="Maquina Parada">Maquina Parada</mat-radio-button>
+        <mat-radio-button value="Em Funcionamento">Em Funcionamento</mat-radio-button>
+        <mat-radio-button value="Funcionamento Parcial">Funcionamento Parcial</mat-radio-button>
+      </mat-radio-group>
     </form>
-    
+   
     <!-- Preenchmento da Manutenção-->
     <aside class="borda-teste">
       <p>Area de preenchimento da Manutenção</p>

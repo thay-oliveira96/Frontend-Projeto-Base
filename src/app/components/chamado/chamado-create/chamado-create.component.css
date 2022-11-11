@@ -42,7 +42,13 @@
  .borda-teste{
    border-width: 2px;
    border-style: solid;
-   border-color: black;
+   border-color: rgb(179, 179, 179);
    border-radius: 1rem;
    padding: 10px;
+ }
+
+ mat-radio-group {
+    display: flex;
+    justify-content: space-between;
+    
  }
