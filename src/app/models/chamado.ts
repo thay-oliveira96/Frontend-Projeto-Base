@@ -4,8 +4,11 @@ export interface Chamado {
     dataFechamento?: string;
     prioridade:      string;
     status:          string;
+    tipoManutencao:  string;
+    categoriaManutencao: string;
     defeitos:          any;
     observacoes:     string;
+    obsTec:          string;
     tecnico:            any;
     cliente:            any;
     gestor:             any;    

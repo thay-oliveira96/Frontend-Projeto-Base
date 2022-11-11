@@ -25,8 +25,11 @@ export class ChamadoCreateComponent implements OnInit {
   chamado: Chamado = {
     prioridade:  '',
     status:      '',
+    tipoManutencao: '',
+    categoriaManutencao: '',
     defeitos:      '',
     observacoes: '',
+    obsTec:      '',
     tecnico:     '',
     cliente:     '',
     gestor:      '',
@@ -46,8 +49,11 @@ export class ChamadoCreateComponent implements OnInit {
 
   prioridade: FormControl = new FormControl(null, [Validators.required]);
   status:     FormControl = new FormControl(null, [Validators.required]);
+  tipoManutencao: FormControl = new FormControl(null, [Validators.required]);
+  categoriaManutencao: FormControl = new FormControl(null, [Validators.required]);
   defeitos:     FormControl = new FormControl(null, [Validators.required]);
   observacoes:FormControl = new FormControl(null, [Validators.required]);
+  obsTec:FormControl = new FormControl(null, [Validators.required]);
   tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
   gestor:    FormControl = new FormControl(null, [Validators.required]);
@@ -116,6 +122,7 @@ export class ChamadoCreateComponent implements OnInit {
   validaCampos(): boolean {
     return this.prioridade.valid && this.status.valid && this.defeitos.valid 
        && this.observacoes.valid && this.tecnico.valid && this.cliente.valid 
-       && this.gestor.valid && this.maquina.valid
+       && this.gestor.valid && this.maquina.valid && this.tipoManutencao.valid
+       && this.categoriaManutencao.valid
   }
 }

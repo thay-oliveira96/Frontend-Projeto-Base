@@ -27,8 +27,11 @@ export class ChamadoUpdateComponent implements OnInit {
 
     prioridade:  '',
     status:      '',
+    tipoManutencao: '',
+    categoriaManutencao: '',
     defeitos:      '',
     observacoes: '',
+    obsTec:      '',
     tecnico:     '',
     cliente:     '',
     gestor:      '',
