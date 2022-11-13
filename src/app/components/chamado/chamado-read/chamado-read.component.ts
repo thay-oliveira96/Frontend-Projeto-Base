@@ -70,5 +70,24 @@ export class ChamadoReadComponent implements OnInit {
       return 'ALTA'
     }
   }
+  retornaCategoriaManutencao(categoriaManutencao: string): string {
+    if(categoriaManutencao == '0') {
+      return 'BAIXA'
+    } else if(categoriaManutencao == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
+
+  retornaTipoManutencao(tipoManutencao: string): string {
+    if(tipoManutencao == '0') {
+      return 'BAIXA'
+    } else if(tipoManutencao == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
 
 }

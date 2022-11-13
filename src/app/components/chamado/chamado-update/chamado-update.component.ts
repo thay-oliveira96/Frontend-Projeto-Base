@@ -52,12 +52,16 @@ export class ChamadoUpdateComponent implements OnInit {
 
   prioridade: FormControl = new FormControl(null, [Validators.required]);
   status:     FormControl = new FormControl(null, [Validators.required]);
+  tipoManutencao: FormControl = new FormControl(null, [Validators.required]);
+  categoriaManutencao: FormControl = new FormControl(null, [Validators.required]);
   defeitos:     FormControl = new FormControl(null, [Validators.required]);
   observacoes:FormControl = new FormControl(null, [Validators.required]);
   tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
   gestor:    FormControl = new FormControl(null, [Validators.required]);
   maquina:   FormControl = new FormControl(null, [Validators.required]);
+  obsTec: FormControl = new FormControl(null, [Validators.required]);
+  parada: FormControl = new FormControl(null, [Validators.required]);
 
   constructor(
     private chamadoService: ChamadoService,
@@ -150,6 +154,26 @@ export class ChamadoUpdateComponent implements OnInit {
     if(prioridade == '0') {
       return 'BAIXA'
     } else if(prioridade == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
+
+  retornaCategoriaManutencao(categoriaManutencao: string): string {
+    if(categoriaManutencao == '0') {
+      return 'BAIXA'
+    } else if(categoriaManutencao == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
+
+  retornaTipoManutencao(tipoManutencao: string): string {
+    if(tipoManutencao == '0') {
+      return 'BAIXA'
+    } else if(tipoManutencao == '1') {
       return 'MÉDIA'
     } else {
       return 'ALTA'

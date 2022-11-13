@@ -41,6 +41,20 @@
        </mat-form-field>
     </div>
 
+    <mat-radio-group aria-label="Select an option" class="full-width"
+    [(ngModel)]="chamado.parada"
+      name="observacoes"
+      [formControl]="observacoes"
+      required
+      class="observacoes" 
+      matInput 
+      color="primary"
+    >
+      <mat-radio-button value="Maquina Parada">Maquina Parada</mat-radio-button>
+      <mat-radio-button value="Em Funcionamento">Em Funcionamento</mat-radio-button>
+      <mat-radio-button value="Funcionamento Parcial">Funcionamento Parcial</mat-radio-button>
+    </mat-radio-group>
+
     <form class="form">  
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Deixe uma observação</mat-label>
@@ -53,19 +67,6 @@
         matInput 
         placeholder="Ex. Algum comportamento que a maquina está que seja fora do normal..."></textarea>
       </mat-form-field>
-      <mat-radio-group aria-label="Select an option" class="full-width"
-      [(ngModel)]="chamado.parada"
-        name="observacoes"
-        [formControl]="observacoes"
-        required
-        class="observacoes" 
-        matInput 
-        color="primary"
-      >
-        <mat-radio-button value="Maquina Parada">Maquina Parada</mat-radio-button>
-        <mat-radio-button value="Em Funcionamento">Em Funcionamento</mat-radio-button>
-        <mat-radio-button value="Funcionamento Parcial">Funcionamento Parcial</mat-radio-button>
-      </mat-radio-group>
     </form>
    
     <!-- Preenchmento da Manutenção-->
@@ -78,7 +79,8 @@
           [(ngModel)]="chamado.status"
           name="status"
           [formControl]="status" 
-          required>
+          required
+          >
             <mat-option value="0">ABERTO</mat-option>
             <mat-option value="1">EM ANDAMENTO</mat-option>
             <mat-option value="2">ENCERRADO</mat-option>
@@ -126,6 +128,20 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <div class="gestor">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Selecione um Gestor</mat-label>
+         <mat-select 
+         [(ngModel)]="chamado.gestor"
+         name="gestor"
+         [formControl]="gestor" 
+         required>
+           <mat-option *ngFor="let gest of gestores" value="{{ gest.id }}">{{ gest.nome }}</mat-option>
+         </mat-select>
+       </mat-form-field>
+    </div>
+
      <div class="tecnico">
        <mat-form-field class="full-width" appearance="outline">
           <mat-label>Selecione um técnico</mat-label>
@@ -138,19 +154,6 @@
           </mat-select>
         </mat-form-field>
      </div>
-
-     <div class="gestor">
-      <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Selecione um Gestor</mat-label>
-         <mat-select 
-         [(ngModel)]="chamado.gestor"
-         name="gestor"
-         [formControl]="gestor" 
-         required>
-           <mat-option *ngFor="let gest of gestores" value="{{ gest.id }}">{{ gest.nome }}</mat-option>
-         </mat-select>
-       </mat-form-field>
-    </div>
  
      <form class="form">  
        <mat-form-field class="full-width" appearance="outline">
