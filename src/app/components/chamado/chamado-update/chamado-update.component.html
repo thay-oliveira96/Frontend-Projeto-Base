@@ -43,8 +43,8 @@
 
     <mat-radio-group aria-label="Select an option" class="full-width"
     [(ngModel)]="chamado.parada"
-      name="observacoes"
-      [formControl]="observacoes"
+      name="parada"
+      [formControl]="parada"
       required
       class="observacoes" 
       matInput 
@@ -83,6 +83,7 @@
             <mat-option value="0">ABERTO</mat-option>
             <mat-option value="1">EM ANDAMENTO</mat-option>
             <mat-option value="2">ENCERRADO</mat-option>
+            <mat-option value="3">CANCELADO</mat-option>
           </mat-select>
         </mat-form-field>
  
@@ -93,6 +94,7 @@
           name="prioridade"
           [formControl]="prioridade" 
           required>
+          <mat-option value="3">DEFINA</mat-option>
             <mat-option value="0">BAIXA</mat-option>
             <mat-option value="1">MÉDIA</mat-option>
             <mat-option value="2">ALTA</mat-option>
@@ -101,7 +103,7 @@
      </div>
      <div class="status-prioridade">
       <mat-form-field appearance="outline">
-       <mat-label>TIPO DE MANURENCAO ({{ retornaTipoManutencao(chamado.tipoManutencao)}})</mat-label>
+       <mat-label>TIPO DE MANUTENCAO ({{ retornaTipoManutencao(chamado.tipoManutencao)}})</mat-label>
        <mat-select 
        [(ngModel)]="chamado.tipoManutencao"
        name="tipoManutencao"

@@ -63,10 +63,7 @@ import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/d
 import { DefeitosListComponent } from './components/defeitos/defeitos-list/defeitos-list.component';
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
-import { PecasListComponent } from './components/pecas/pecas-list/pecas-list.component';
-import { PecasCreateComponent } from './components/pecas/pecas-create/pecas-create.component';
-import { PecasUpdateComponent } from './components/pecas/pecas-update/pecas-update.component';
-import { PecasDeleteComponent } from './components/pecas/pecas-delete/pecas-delete.component';
+import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/chamado-update-u.component';
 
 @NgModule({
   declarations: [
@@ -103,10 +100,8 @@ import { PecasDeleteComponent } from './components/pecas/pecas-delete/pecas-dele
     DefeitosListComponent,
     DefeitosUpdateComponent,
     DefeitosDeleteComponent,
-    PecasListComponent,
-    PecasCreateComponent,
-    PecasUpdateComponent,
-    PecasDeleteComponent
+    ChamadoUpdateUComponent,
+
   ],
   imports: [
     BrowserModule,

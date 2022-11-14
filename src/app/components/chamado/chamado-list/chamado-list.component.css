@@ -22,9 +22,15 @@
     text-align: center;
     margin-bottom: 2rem;
  }
+
+ .build {
+   color: rgb(0, 153, 255);
+   margin-right: 10px;
+}
  
  .edit {
-    color: rgb(0, 153, 255);
+    color: rgb(255, 166, 0);
+    margin-right: 10px;
  }
  
  .delete {

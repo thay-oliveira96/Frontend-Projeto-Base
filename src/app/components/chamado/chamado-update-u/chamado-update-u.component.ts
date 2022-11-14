@@ -5,40 +5,35 @@ import { ToastrService } from 'ngx-toastr';
 import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
 import { Defeitos } from 'src/app/models/defeitos';
-import { Gestor } from 'src/app/models/gestor';
 import { Maquina } from 'src/app/models/maquina';
-import { Tecnico } from 'src/app/models/tecnico';
 import { ChamadoService } from 'src/app/services/chamado.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { DefeitoService } from 'src/app/services/defeitos.service';
-import { GestorService } from 'src/app/services/gestor.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
-import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'app-chamado-update',
-  templateUrl: './chamado-update.component.html',
-  styleUrls: ['./chamado-update.component.css']
+  selector: 'app-chamado-update-u',
+  templateUrl: './chamado-update-u.component.html',
+  styleUrls: ['./chamado-update-u.component.css']
 })
-
-export class ChamadoUpdateComponent implements OnInit {
+export class ChamadoUpdateUComponent implements OnInit {
 
   chamado: Chamado = {
 
-    prioridade:  '',
-    status:      '',
-    tipoManutencao: '',
-    categoriaManutencao: '',
+    prioridade:  '3',
+    status:      '0',
+    tipoManutencao: 'DEFINA',
+    categoriaManutencao: 'DEFINA',
     defeitos:      '',
     observacoes: '',
     obsTec:      '',
-    tecnico:     '',
+    tecnico:     1,
     cliente:     '',
-    gestor:      '',
+    gestor:      11,
     maquina:     '', 
     nomeCliente: '',
-    nomeGestor:  '',
     nomeTecnico: '',
+    nomeGestor: '',
     nomeMaquina: '',
     nomeDefeitos: '',
     parada:       '',
@@ -46,30 +41,19 @@ export class ChamadoUpdateComponent implements OnInit {
   }
 
   clientes: Cliente[] = []
-  tecnicos: Tecnico[] = []
-  gestores: Gestor[] = []
   maquinas: Maquina[] = []
   defeitoso: Defeitos[] = []
 
-  prioridade: FormControl = new FormControl(null, [Validators.required]);
-  status:     FormControl = new FormControl(null, [Validators.required]);
-  tipoManutencao: FormControl = new FormControl(null, [Validators.required]);
-  categoriaManutencao: FormControl = new FormControl(null, [Validators.required]);
   defeitos:     FormControl = new FormControl(null, [Validators.required]);
   observacoes:FormControl = new FormControl(null, [Validators.required]);
-  tecnico:    FormControl = new FormControl(null, [Validators.required]);
   cliente:    FormControl = new FormControl(null, [Validators.required]);
-  gestor:    FormControl = new FormControl(null, [Validators.required]);
   maquina:   FormControl = new FormControl(null, [Validators.required]);
-  obsTec: FormControl = new FormControl(null, [Validators.required]);
   parada: FormControl = new FormControl(null, [Validators.required]);
   horaParada: FormControl = new FormControl(null, [Validators.required]);
 
   constructor(
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
-    private tecnicoService: TecnicoService,
-    private gestorService:  GestorService,
     private maquinaService: MaquinaService,
     private defeitoService: DefeitoService,
     private toastService:    ToastrService,
@@ -81,8 +65,6 @@ export class ChamadoUpdateComponent implements OnInit {
     this.chamado.id = this.route.snapshot.paramMap.get('id');
     this.findById();
     this.findAllClientes();
-    this.findAllTecnicos();
-    this.findAllGestores();
     this.findAllMaquinas();
     this.findAllDefeitos();
   }
@@ -112,18 +94,6 @@ export class ChamadoUpdateComponent implements OnInit {
     })
   }
 
-  findAllTecnicos(): void {
-    this.tecnicoService.findAll().subscribe(resposta => {
-      this.tecnicos = resposta;
-    })
-  }
-
-  findAllGestores(): void {
-    this.gestorService.findAll().subscribe(resposta => {
-      this.gestores = resposta;
-    })
-  }
-
   findAllMaquinas(): void {
     this.maquinaService.findAll().subscribe(resposta => {
       this.maquinas = resposta;
@@ -137,49 +107,9 @@ export class ChamadoUpdateComponent implements OnInit {
   }
 
   validaCampos(): boolean {
-    return this.prioridade.valid && this.status.valid && this.defeitos.valid 
-       && this.observacoes.valid && this.tecnico.valid && this.cliente.valid 
-       && this.gestor.valid && this.maquina.valid
-  }
-
-  retornaStatus(status: any): string {
-    if(status == '0') {
-      return 'ABERTO'
-    } else if(status == '1') {
-      return 'EM ANDAMENTO'
-    } else {
-      return 'ENCERRADO'
-    }
-  }
-
-  retornaPrioridade(prioridade: any): string {
-    if(prioridade == '0') {
-      return 'BAIXA'
-    } else if(prioridade == '1') {
-      return 'MÉDIA'
-    } else {
-      return 'ALTA'
-    }
-  }
-
-  retornaCategoriaManutencao(categoriaManutencao: string): string {
-    if(categoriaManutencao == '0') {
-      return 'BAIXA'
-    } else if(categoriaManutencao == '1') {
-      return 'MÉDIA'
-    } else {
-      return 'ALTA'
-    }
-  }
-
-  retornaTipoManutencao(tipoManutencao: string): string {
-    if(tipoManutencao == '0') {
-      return 'BAIXA'
-    } else if(tipoManutencao == '1') {
-      return 'MÉDIA'
-    } else {
-      return 'ALTA'
-    }
+    return this.defeitos.valid 
+       && this.observacoes.valid && this.cliente.valid 
+       && this.maquina.valid
   }
 
 }

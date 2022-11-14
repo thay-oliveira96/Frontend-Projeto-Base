@@ -19,4 +19,5 @@ export interface Chamado {
     nomeMaquina:     String;
     nomeDefeitos:    String;
     parada:          String;
+    horaParada:      String;
  }

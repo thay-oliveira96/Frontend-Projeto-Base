@@ -32,10 +32,7 @@ import { DefeitosListComponent } from './components/defeitos/defeitos-list/defei
 import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
-import { PecasListComponent } from './components/pecas/pecas-list/pecas-list.component';
-import { PecasCreateComponent } from './components/pecas/pecas-create/pecas-create.component';
-import { PecasUpdateComponent } from './components/pecas/pecas-update/pecas-update.component';
-import { PecasDeleteComponent } from './components/pecas/pecas-delete/pecas-delete.component';
+import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/chamado-update-u.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -62,6 +59,7 @@ const routes: Routes = [
       {path: 'chamados/create', component: ChamadoCreateComponent},
       {path: 'chamados/update/:id', component: ChamadoUpdateComponent},
       {path: 'chamados/read/:id', component: ChamadoReadComponent},
+      {path: 'chamados/update-u/:id', component: ChamadoUpdateUComponent},
 
       {path: 'maquinas', component: MaquinaListComponent},
       {path: 'maquinas/create', component: MaquinaCreateComponent},
@@ -78,10 +76,6 @@ const routes: Routes = [
       {path: 'defeitos/update/:id', component: DefeitosUpdateComponent},
       {path: 'defeitos/delete/:id', component: DefeitosDeleteComponent},
 
-      {path: 'pecas', component: PecasListComponent},
-      {path: 'pecas/create', component: PecasCreateComponent},
-      {path: 'pecas/update/:id', component: PecasUpdateComponent},
-      {path: 'pecas/delete/:id', component: PecasDeleteComponent},
     ]
   }
 ];

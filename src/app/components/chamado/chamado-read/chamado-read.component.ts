@@ -29,7 +29,8 @@ export class ChamadoReadComponent implements OnInit {
     nomeTecnico: '',
     nomeMaquina:  '',
     nomeDefeitos: '',
-    parada:       ''
+    parada:       '',
+    horaParada:   ''
   }
 
   constructor(
