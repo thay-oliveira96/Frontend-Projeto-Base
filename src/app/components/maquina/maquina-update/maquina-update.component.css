@@ -3,34 +3,37 @@
     margin: auto;
     padding: 1rem;
     border-radius: .6rem;
-
-}
-.fullwidth {
+ 
+ }
+ .fullwidth {
     width: 100%;
-}
-h1, p {
+ }
+ h1, p {
     text-align: center;
-}
-
-img {
+ }
+ 
+ img {
     height: 8rem;
     margin: auto;
-
-}
-
-.section {
+ 
+ }
+ 
+ .section {
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
-}
-button {
+ }
+ button {
     margin-top: 1rem;
-}
-
-p {
+ }
+ 
+ p {
     margin-top: 4rem;
     opacity: .5;
-}
-.mat-icon {
+ }
+ .mat-icon {
     opacity: .7;
-}
+ }
+ .selecao {
+    width: 100%;
+ }
