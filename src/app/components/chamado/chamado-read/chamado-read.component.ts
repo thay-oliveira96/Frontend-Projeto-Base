@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -54,41 +55,54 @@ export class ChamadoReadComponent implements OnInit {
 
   retornaStatus(status: any): string {
     if(status == '0') {
-      return 'ABERTO'
+      return 'ABERTO' 
     } else if(status == '1') {
-      return 'EM ANDAMENTO'
-    } else {
+      return 'EM ANDAMENTO' 
+    }
+    else if (status == '2'){
       return 'ENCERRADO'
+    } else {
+      return 'CANCELADO'
     }
   }
 
   retornaPrioridade(prioridade: any): string {
     if(prioridade == '0') {
       return 'BAIXA'
-    } else if(prioridade == '1') {
+    } 
+    else if(prioridade == '1') {
       return 'MÉDIA'
-    } else {
+    } else if(prioridade == '2'){
       return 'ALTA'
+    } else {
+      return '---DEFINA---'
     }
+    
   }
   retornaCategoriaManutencao(categoriaManutencao: string): string {
-    if(categoriaManutencao == '0') {
-      return 'BAIXA'
-    } else if(categoriaManutencao == '1') {
-      return 'MÉDIA'
-    } else {
-      return 'ALTA'
+    if(categoriaManutencao == 'MECANICA') {
+      return 'MECANICA'
+    } else if(categoriaManutencao == 'ELETRICA') {
+      return 'ELETRICA'
+    } else if (categoriaManutencao == 'HIDRAULICA'){
+      return 'OUTRAS'
+    } else if(categoriaManutencao == 'PNEUMATICA'){
+      return 'PNEUMATICA'
+    }else{
+      return '---DEFINA---'
     }
   }
 
   retornaTipoManutencao(tipoManutencao: string): string {
-    if(tipoManutencao == '0') {
-      return 'BAIXA'
-    } else if(tipoManutencao == '1') {
-      return 'MÉDIA'
-    } else {
-      return 'ALTA'
+    if(tipoManutencao == 'PREVENTIVA') {
+      return 'PREVENTIVA'
+    } else if(tipoManutencao == 'CORRETIVA') {
+      return 'CORRETIVA'
+    } else if (tipoManutencao == 'PREDITIVA'){
+      return 'PREDITIVA'
+    } else{
+      return '---DEFINA---'
     }
   }
-
+  
 }

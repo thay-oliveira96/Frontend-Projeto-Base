@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +15,7 @@ export class ChamadoListComponent implements OnInit {
   ELEMENT_DATA: Chamado[] = []
   FILTERED_DATA: Chamado[] = []
 
-  displayedColumns: string[] = ['id', 'defeitos', 'maquina', 'cliente', 'dataAbertura', 'prioridade', 'status', 'acoes'];
+  displayedColumns: string[] = ['id', 'defeitos', 'maquina', 'cliente', 'dataAbertura', 'status','prioridade', 'dataFechamento', 'acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -42,26 +43,56 @@ export class ChamadoListComponent implements OnInit {
 
   retornaStatus(status: any): string {
     if(status == '0') {
-      return 'ABERTO'
+      return 'ABERTO' 
     } else if(status == '1') {
-      return 'EM ANDAMENTO'
-    } else if(status == '3') {
-        return 'CANCELADO'
-    } 
-    else {
+      return 'EM ANDAMENTO' 
+    }
+    else if (status == '2'){
       return 'ENCERRADO'
+    } else {
+      return 'CANCELADO'
     }
   }
 
   retornaPrioridade(prioridade: any): string {
     if(prioridade == '0') {
       return 'BAIXA'
-    } else if(prioridade == '1') {
+    } 
+    else if(prioridade == '1') {
       return 'MÉDIA'
-    } else {
+    } else if(prioridade == '2'){
       return 'ALTA'
+    } else {
+      return ' '
+    }
+    
+  }
+  retornaCategoriaManutencao(categoriaManutencao: string): string {
+    if(categoriaManutencao == 'MECANICA') {
+      return 'MECANICA'
+    } else if(categoriaManutencao == 'ELETRICA') {
+      return 'ELETRICA'
+    } else if (categoriaManutencao == 'HIDRAULICA'){
+      return 'OUTRAS'
+    } else if(categoriaManutencao == 'PNEUMATICA'){
+      return 'PNEUMATICA'
+    }else{
+      return '---DEFINA---'
     }
   }
+
+  retornaTipoManutencao(tipoManutencao: string): string {
+    if(tipoManutencao == 'PREVENTIVA') {
+      return 'PREVENTIVA'
+    } else if(tipoManutencao == 'CORRETIVA') {
+      return 'CORRETIVA'
+    } else if (tipoManutencao == 'PREDITIVA'){
+      return 'PREDITIVA'
+    } else{
+      return '---DEFINA---'
+    }
+  }
+
 
   orderByStatus(status: any): void{
     let list: Chamado[] = []

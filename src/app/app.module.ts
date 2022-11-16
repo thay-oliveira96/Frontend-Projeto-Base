@@ -64,6 +64,7 @@ import { DefeitosListComponent } from './components/defeitos/defeitos-list/defei
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
 import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/chamado-update-u.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/c
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
+    CommonModule,
     MatRadioModule,
     MatTableModule,
     MatIconModule,

@@ -6,6 +6,7 @@
       <mat-form-field class="full-width" appearance="outline">
          <mat-label>Titulo ({{ chamado.nomeDefeitos }})</mat-label>
          <mat-select 
+         [disabled]="true"
          [(ngModel)]="chamado.nomeDefeitos"
          name="defeitos"
          [formControl]="defeitos" 
@@ -19,6 +20,7 @@
       <mat-form-field class="full-width" appearance="outline">
          <mat-label>MAQUINA ({{ chamado.nomeMaquina }})</mat-label>
          <mat-select 
+         [disabled]="true"
          [(ngModel)]="chamado.maquina"
          name="maquina"
          [formControl]="maquina" 
@@ -32,6 +34,7 @@
       <mat-form-field class="full-width" appearance="outline">
          <mat-label>CLIENTE ({{ chamado.nomeCliente }})</mat-label>
          <mat-select 
+         [disabled]="true"
          [(ngModel)]="chamado.cliente"
          name="cliente"
          [formControl]="cliente" 
@@ -42,6 +45,7 @@
     </div>
 
     <mat-radio-group aria-label="Select an option" class="full-width"
+    [disabled]="true"
     [(ngModel)]="chamado.parada"
       name="parada"
       [formControl]="parada"
@@ -59,13 +63,15 @@
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Deixe uma observação</mat-label>
         <textarea 
+        [disabled]="true"
         [(ngModel)]="chamado.observacoes"
         name="observacoes"
         [formControl]="observacoes"
         required
         class="observacoes" 
         matInput 
-        placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
+        placeholder="Ex. trocar bateria de notebook queimada..."
+        ></textarea>
       </mat-form-field>
     </form>
     
