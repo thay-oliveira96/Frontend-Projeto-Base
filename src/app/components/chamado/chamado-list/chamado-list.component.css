@@ -47,16 +47,16 @@
     justify-content: space-around;
     margin-bottom: 1rem;
  }
- .vermelho{
-   color: red;
-}
-.verde {
-color: green;
-}
-.laranja{
-color: orange;
-}
 
 td.ABERTO {
-   color:rgb(0, 153, 255)
+   color: green;
+}
+td.EM.ANDAMENTO {
+   color: yellow;
+}
+td.ENCERRADO {
+   color: blue;
+}
+td.CANCELADO {
+   color: red;
 }
