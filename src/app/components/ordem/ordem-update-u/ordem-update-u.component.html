@@ -4,9 +4,9 @@
  
     <div class="defeitos">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Titulo ({{ chamado.nomeDefeitos }})</mat-label>
+         <mat-label>Titulo ({{ ordem.nomeDefeitos }})</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.nomeDefeitos"
+         [(ngModel)]="ordem.nomeDefeitos"
          name="defeitos"
          [formControl]="defeitos" 
          required>
@@ -17,9 +17,9 @@
 
      <div class="maquina">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>MAQUINA ({{ chamado.nomeMaquina }})</mat-label>
+         <mat-label>MAQUINA ({{ ordem.nomeMaquina }})</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.maquina"
+         [(ngModel)]="ordem.maquina"
          name="maquina"
          [formControl]="maquina" 
          required>
@@ -30,9 +30,9 @@
 
     <div class="cliente">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>CLIENTE ({{ chamado.nomeCliente }})</mat-label>
+         <mat-label>CLIENTE ({{ ordem.nomeCliente }})</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.cliente"
+         [(ngModel)]="ordem.cliente"
          name="cliente"
          [formControl]="cliente" 
          required>
@@ -42,7 +42,7 @@
     </div>
 
     <mat-radio-group aria-label="Select an option" class="full-width"
-    [(ngModel)]="chamado.parada"
+    [(ngModel)]="ordem.parada"
       name="parada"
       [formControl]="parada"
       class="observacoes" 
@@ -56,7 +56,7 @@
     <div class="status-prioridade">
       <p class="letra">Maquina parada? Informe o horario</p>
       <input
-      [(ngModel)]="chamado.horaParada"
+      [(ngModel)]="ordem.horaParada"
       name="horaParada"
       class="hora" appearance="outline"
        type="time" id="appt" name="appt"
@@ -68,7 +68,7 @@
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Deixe uma observação</mat-label>
         <textarea 
-        [(ngModel)]="chamado.observacoes"
+        [(ngModel)]="ordem.observacoes"
         name="observacoes"
         [formControl]="observacoes"
         required

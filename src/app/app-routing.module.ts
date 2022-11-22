@@ -12,14 +12,10 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
-import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
-import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 import { GestorListComponent } from './components/gestor/gestor-list/gestor-list.component';
 import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
 import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
-import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
-import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
 import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-list.component';
 import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
 import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
@@ -32,7 +28,11 @@ import { DefeitosListComponent } from './components/defeitos/defeitos-list/defei
 import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
-import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/chamado-update-u.component';
+import { OrdemCreateComponent } from './components/ordem/ordem-create/ordem-create.component';
+import { OrdemListComponent } from './components/ordem/ordem-list/ordem-list.component';
+import { OrdemUpdateComponent } from './components/ordem/ordem-update/ordem-update.component';
+import { OrdemReadComponent } from './components/ordem/ordem-read/ordem-read.component';
+import { OrdemUpdateUComponent } from './components/ordem/ordem-update-u/ordem-update-u.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -55,11 +55,11 @@ const routes: Routes = [
       {path: 'gestores/update/:id', component: GestorUpdateComponent},
       {path: 'gestores/delete/:id', component: GestorDeleteComponent},
 
-      {path: 'chamados', component: ChamadoListComponent},
-      {path: 'chamados/create', component: ChamadoCreateComponent},
-      {path: 'chamados/update/:id', component: ChamadoUpdateComponent},
-      {path: 'chamados/read/:id', component: ChamadoReadComponent},
-      {path: 'chamados/update-u/:id', component: ChamadoUpdateUComponent},
+      {path: 'ordens', component: OrdemListComponent},
+      {path: 'ordens/create', component: OrdemCreateComponent},
+      {path: 'ordens/update/:id', component: OrdemUpdateComponent},
+      {path: 'ordens/read/:id', component: OrdemReadComponent},
+      {path: 'ordens/update-u/:id', component: OrdemUpdateUComponent},
 
       {path: 'maquinas', component: MaquinaListComponent},
       {path: 'maquinas/create', component: MaquinaCreateComponent},

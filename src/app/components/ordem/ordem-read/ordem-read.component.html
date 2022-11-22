@@ -1,59 +1,47 @@
 <div class="container mat-elevation-z8">
-    <h1 class="full-width">Atualização de Ordem de Manutenção</h1>
+    <h1 class="full-width">Leitura da Ordem de Manutencao</h1>
     <img class="full-width" src="assets/img/chamado-create.svg" alt="Chamado image">
  
     <div class="defeitos">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Titulo ({{ chamado.nomeDefeitos }})</mat-label>
+         <mat-label>Titulo ({{ ordem.nomeDefeitos }})</mat-label>
          <mat-select 
          [disabled]="true"
-         [(ngModel)]="chamado.nomeDefeitos"
-         name="defeitos"
-         [formControl]="defeitos" 
-         required>
-           <mat-option *ngFor="let def of defeitoso" value="{{ def.id }}">{{ def.descricao }}</mat-option>
+         [(ngModel)]="ordem.nomeDefeitos"
+         name="defeitos">
          </mat-select>
        </mat-form-field>
     </div>
 
      <div class="maquina">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>MAQUINA ({{ chamado.nomeMaquina }})</mat-label>
+         <mat-label>MAQUINA ({{ ordem.nomeMaquina }})</mat-label>
          <mat-select 
          [disabled]="true"
-         [(ngModel)]="chamado.maquina"
-         name="maquina"
-         [formControl]="maquina" 
-         required>
-           <mat-option *ngFor="let maq of maquinas" value="{{ maq.id }}">{{ maq.nome }}</mat-option>
+         [(ngModel)]="ordem.maquina"
+         name="maquina">
          </mat-select>
        </mat-form-field>
     </div>
 
     <div class="cliente">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>CLIENTE ({{ chamado.nomeCliente }})</mat-label>
+         <mat-label>CLIENTE ({{ ordem.nomeCliente }})</mat-label>
          <mat-select 
          [disabled]="true"
-         [(ngModel)]="chamado.cliente"
-         name="cliente"
-         [formControl]="cliente" 
-         required>
-           <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{ cli.nome }}</mat-option>
+         [(ngModel)]="ordem.cliente"
+         name="cliente">
          </mat-select>
        </mat-form-field>
     </div>
 
     <mat-radio-group aria-label="Select an option" class="full-width"
-    [disabled]="true"
-    [(ngModel)]="chamado.parada"
-      name="parada"
-      [formControl]="parada"
-      required
+    [(ngModel)]="ordem.parada"
+      name="observacoes"
       class="observacoes" 
+      [disabled]="true"
       matInput 
-      color="primary"
-    >
+      color="primary">
       <mat-radio-button value="Maquina Parada">Maquina Parada</mat-radio-button>
       <mat-radio-button value="Em Funcionamento">Em Funcionamento</mat-radio-button>
       <mat-radio-button value="Funcionamento Parcial">Funcionamento Parcial</mat-radio-button>
@@ -63,15 +51,12 @@
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Deixe uma observação</mat-label>
         <textarea 
-        [disabled]="true"
-        [(ngModel)]="chamado.observacoes"
+        [(ngModel)]="ordem.observacoes"
         name="observacoes"
-        [formControl]="observacoes"
-        required
         class="observacoes" 
+        [disabled]="true"
         matInput 
-        placeholder="Ex. trocar bateria de notebook queimada..."
-        ></textarea>
+        placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
       </mat-form-field>
     </form>
     
@@ -80,27 +65,23 @@
       <p>Area de preenchimento da Manutenção</p>
      <div class="status-prioridade">
        <mat-form-field appearance="outline">
-          <mat-label>STATUS ({{ retornaStatus(chamado.status) }})</mat-label>
+          <mat-label>STATUS ({{ retornaStatus(ordem.status) }})</mat-label>
           <mat-select 
-          [(ngModel)]="chamado.status"
-          name="status"
-          [formControl]="status" 
-          required>
+          [disabled]="true"
+          [(ngModel)]="ordem.status"
+          name="status">
             <mat-option value="0">ABERTO</mat-option>
             <mat-option value="1">EM ANDAMENTO</mat-option>
             <mat-option value="2">ENCERRADO</mat-option>
-            <mat-option value="3">CANCELADO</mat-option>
           </mat-select>
         </mat-form-field>
  
         <mat-form-field appearance="outline">
-          <mat-label>PRIORIDADE ({{ retornaPrioridade(chamado.prioridade) }})</mat-label>
+          <mat-label>PRIORIDADE ({{ retornaPrioridade(ordem.prioridade) }})</mat-label>
           <mat-select 
-          [(ngModel)]="chamado.prioridade"
-          name="prioridade"
-          [formControl]="prioridade" 
-          required>
-          <mat-option value="3">DEFINA</mat-option>
+          [(ngModel)]="ordem.prioridade"
+          [disabled]="true"
+          name="prioridade">
             <mat-option value="0">BAIXA</mat-option>
             <mat-option value="1">MÉDIA</mat-option>
             <mat-option value="2">ALTA</mat-option>
@@ -109,12 +90,11 @@
      </div>
      <div class="status-prioridade">
       <mat-form-field appearance="outline">
-       <mat-label>TIPO DE MANUTENCAO ({{ retornaTipoManutencao(chamado.tipoManutencao)}})</mat-label>
+       <mat-label>TIPO DE MANURENCAO ({{ retornaTipoManutencao(ordem.tipoManutencao)}})</mat-label>
        <mat-select 
-       [(ngModel)]="chamado.tipoManutencao"
-       name="tipoManutencao"
-       [formControl]="tipoManutencao" 
-       required>
+       [disabled]="true"
+       [(ngModel)]="ordem.tipoManutencao"
+       name="tipoManutencao">
          <mat-option value="CORRETIVA">CORRETIVA</mat-option>
          <mat-option value="PREDITIVA">PREDITIVA</mat-option>
          <mat-option value="PREVENTIVA">PREVENTIVA</mat-option>
@@ -122,12 +102,11 @@
  
        </mat-form-field>
        <mat-form-field appearance="outline">
-         <mat-label> CATEGORIA DE MANUTENCAO ({{retornaCategoriaManutencao(chamado.categoriaManutencao)}}) </mat-label>
+         <mat-label> CATEGORIA DE MANUTENCAO ({{retornaCategoriaManutencao(ordem.categoriaManutencao)}}) </mat-label>
          <mat-select 
-         [(ngModel)]="chamado.categoriaManutencao"
-         name="categoriaManutencao"
-         [formControl]="categoriaManutencao" 
-         required>
+         [disabled]="true"
+         [(ngModel)]="ordem.categoriaManutencao"
+         name="categoriaManutencao">
            <mat-option value="MECANICA">MECANICA</mat-option>
            <mat-option value="ELETRICA">ELETRICA</mat-option>
            <mat-option value="HIDRAULICA">HIDRAULICA</mat-option>
@@ -137,26 +116,22 @@
 
      <div class="gestor">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>GESTOR ({{ chamado.nomeGestor }})</mat-label>
+         <mat-label>GESTOR ({{ ordem.nomeGestor }})</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.gestor"
-         name="gestor"
-         [formControl]="gestor" 
-         required>
-           <mat-option *ngFor="let gest of gestores" value="{{ gest.id }}">{{ gest.nome }}</mat-option>
+         [disabled]="true"
+         [(ngModel)]="ordem.gestor"
+         name="gestor">
          </mat-select>
        </mat-form-field>
     </div>
 
      <div class="tecnico">
        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>TÉCNICO ({{ chamado.nomeTecnico }})</mat-label>
+          <mat-label>TÉCNICO ({{ ordem.nomeTecnico }})</mat-label>
           <mat-select 
-          [(ngModel)]="chamado.tecnico"
-          name="tecnico"
-          [formControl]="tecnico" 
-          required>
-            <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+          [disabled]="true"
+          [(ngModel)]="ordem.tecnico"
+          name="tecnico">
           </mat-select>
         </mat-form-field>
      </div>
@@ -165,20 +140,17 @@
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Parecer Tecnico</mat-label>
         <textarea 
-        [(ngModel)]="chamado.obsTec"
+        [disabled]="true"
+        [(ngModel)]="ordem.obsTec"
         name="obsTec"
-        [formControl]="obsTec"
-        required
         class="obsTec" 
         matInput 
         placeholder="Ex. como foi resolvido a ordem de manutenção..."></textarea>
       </mat-form-field></form></div>
 
   </aside> <br>
-    
  
-     <button (click)="update()" [disabled]="!validaCampos()" class="full-width mat-elevation-z4" mat-raised-button color="primary">Atualizar</button>
-     <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Cancelar</button>
+     <button routerLink="../../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Retornar</button>
  
      <p class="full-width">Desnvolvido por Thaynan e Vinicius</p>
  </div>

@@ -43,14 +43,10 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
-import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
-import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 import { GestorListComponent } from './components/gestor/gestor-list/gestor-list.component';
 import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
 import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
 import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
-import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
-import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
 import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
 import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
 import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
@@ -63,8 +59,12 @@ import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/d
 import { DefeitosListComponent } from './components/defeitos/defeitos-list/defeitos-list.component';
 import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
 import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
-import { ChamadoUpdateUComponent } from './components/chamado/chamado-update-u/chamado-update-u.component';
 import { CommonModule } from '@angular/common';
+import { OrdemCreateComponent } from './components/ordem/ordem-create/ordem-create.component';
+import { OrdemListComponent } from './components/ordem/ordem-list/ordem-list.component';
+import { OrdemReadComponent } from './components/ordem/ordem-read/ordem-read.component';
+import { OrdemUpdateComponent } from './components/ordem/ordem-update/ordem-update.component';
+import { OrdemUpdateUComponent } from './components/ordem/ordem-update-u/ordem-update-u.component';
 
 @NgModule({
   declarations: [
@@ -81,14 +81,10 @@ import { CommonModule } from '@angular/common';
     ClienteDeleteComponent,
     ClienteListComponent,
     ClienteUpdateComponent,
-    ChamadoCreateComponent,
-    ChamadoListComponent,
     GestorListComponent,
     GestorCreateComponent,
     GestorUpdateComponent,
     GestorDeleteComponent,
-    ChamadoUpdateComponent,
-    ChamadoReadComponent,
     MaquinaCreateComponent,
     MaquinaUpdateComponent,
     MaquinaDeleteComponent,
@@ -101,7 +97,11 @@ import { CommonModule } from '@angular/common';
     DefeitosListComponent,
     DefeitosUpdateComponent,
     DefeitosDeleteComponent,
-    ChamadoUpdateUComponent,
+    OrdemCreateComponent,
+    OrdemListComponent,
+    OrdemReadComponent,
+    OrdemUpdateComponent,
+    OrdemUpdateUComponent,
 
   ],
   imports: [

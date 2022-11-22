@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
 import { Defeitos } from 'src/app/models/defeitos';
 import { Maquina } from 'src/app/models/maquina';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { Ordem } from 'src/app/models/ordem';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { DefeitoService } from 'src/app/services/defeitos.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
+import { OrdemService } from 'src/app/services/ordem.service';
 
 @Component({
-  selector: 'app-chamado-update-u',
-  templateUrl: './chamado-update-u.component.html',
-  styleUrls: ['./chamado-update-u.component.css']
+  selector: 'app-ordem-update-u',
+  templateUrl: './ordem-update-u.component.html',
+  styleUrls: ['./ordem-update-u.component.css']
 })
-export class ChamadoUpdateUComponent implements OnInit {
+export class OrdemUpdateUComponent implements OnInit {
 
-  chamado: Chamado = {
+  ordem: Ordem = {
 
     prioridade:  '3',
     status:      '0',
@@ -52,7 +52,7 @@ export class ChamadoUpdateUComponent implements OnInit {
   horaParada: FormControl = new FormControl(null, [Validators.required]);
 
   constructor(
-    private chamadoService: ChamadoService,
+    private ordemService: OrdemService,
     private clienteService: ClienteService,
     private maquinaService: MaquinaService,
     private defeitoService: DefeitoService,
@@ -62,7 +62,7 @@ export class ChamadoUpdateUComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.chamado.id = this.route.snapshot.paramMap.get('id');
+    this.ordem.id = this.route.snapshot.paramMap.get('id');
     this.findById();
     this.findAllClientes();
     this.findAllMaquinas();
@@ -70,15 +70,15 @@ export class ChamadoUpdateUComponent implements OnInit {
   }
 
   findById(): void {
-    this.chamadoService.findById(this.chamado.id).subscribe(resposta => {
-      this.chamado = resposta;
+    this.ordemService.findById(this.ordem.id).subscribe(resposta => {
+      this.ordem = resposta;
     }, ex => {
       this.toastService.error(ex.error.error);
     })
   }
 
   update(): void {
-    this.chamadoService.create(this.chamado).subscribe(resposta => {
+    this.ordemService.create(this.ordem).subscribe(resposta => {
       this.toastService.success('Ordem de Manuteção Atualizada com sucesso', 'Atualizando Ordem de Manutebção');
       this.router.navigate(['chamados']);
     }, ex => {

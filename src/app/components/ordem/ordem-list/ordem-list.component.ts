@@ -1,27 +1,26 @@
-import { style } from '@angular/animations';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Chamado } from 'src/app/models/chamado';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { Ordem } from 'src/app/models/ordem';
+import { OrdemService } from 'src/app/services/ordem.service';
 
 @Component({
-  selector: 'app-chamado-list',
-  templateUrl: './chamado-list.component.html',
-  styleUrls: ['./chamado-list.component.css']
+  selector: 'app-ordem-list',
+  templateUrl: './ordem-list.component.html',
+  styleUrls: ['./ordem-list.component.css']
 })
-export class ChamadoListComponent implements OnInit {
+export class OrdemListComponent implements OnInit {
 
-  ELEMENT_DATA: Chamado[] = []
-  FILTERED_DATA: Chamado[] = []
+  ELEMENT_DATA: Ordem[] = []
+  FILTERED_DATA: Ordem[] = []
 
   displayedColumns: string[] = ['id', 'defeitos', 'maquina', 'cliente', 'dataAbertura', 'status','prioridade', 'dataFechamento', 'acoes'];
-  dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Ordem>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    private service: ChamadoService
+    private service: OrdemService
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +30,7 @@ export class ChamadoListComponent implements OnInit {
   findAll(): void {
     this.service.findAll().subscribe(resposta => {
       this.ELEMENT_DATA = resposta;
-      this.dataSource = new MatTableDataSource<Chamado>(resposta);
+      this.dataSource = new MatTableDataSource<Ordem>(resposta);
       this.dataSource.paginator = this.paginator;
     })
   }
@@ -95,13 +94,13 @@ export class ChamadoListComponent implements OnInit {
 
 
   orderByStatus(status: any): void{
-    let list: Chamado[] = []
+    let list: Ordem[] = []
     this.ELEMENT_DATA.forEach(element => {
       if(element.status == status)
         list.push(element)
     });
     this.FILTERED_DATA = list;
-    this.dataSource = new MatTableDataSource<Chamado>(list);
+    this.dataSource = new MatTableDataSource<Ordem>(list);
     this.dataSource.paginator = this.paginator;
   }
 

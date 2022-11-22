@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
 import { Defeitos } from 'src/app/models/defeitos';
 import { Maquina } from 'src/app/models/maquina';
-import { ChamadoService } from 'src/app/services/chamado.service';
+import { Ordem } from 'src/app/models/ordem';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { DefeitoService } from 'src/app/services/defeitos.service';
 import { MaquinaService } from 'src/app/services/maquina.service';
+import { OrdemService } from 'src/app/services/ordem.service';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.css']
+  selector: 'app-ordem-create',
+  templateUrl: './ordem-create.component.html',
+  styleUrls: ['./ordem-create.component.css']
 })
-export class ChamadoCreateComponent implements OnInit {
+export class OrdemCreateComponent implements OnInit {
 
-  chamado: Chamado = {
+  ordem: Ordem = {
     prioridade:  '3',
     status:      '0',
     tipoManutencao: 'DEFINA',
@@ -51,7 +51,7 @@ export class ChamadoCreateComponent implements OnInit {
   parada: FormControl = new FormControl(null, [Validators.required]);
 
   constructor(
-    private chamadoService: ChamadoService,
+    private ordemService: OrdemService,
     private clienteService: ClienteService,
     private maquinaService: MaquinaService,
     private defeitoService: DefeitoService,
@@ -66,7 +66,7 @@ export class ChamadoCreateComponent implements OnInit {
   }
 
   create(): void {
-    this.chamadoService.create(this.chamado).subscribe(resposta => {
+    this.ordemService.create(this.ordem).subscribe(resposta => {
       this.toastService.success('Chamado criado com sucesso', 'Novo chamado');
       this.router.navigate(['chamados']);
     }, ex => {
