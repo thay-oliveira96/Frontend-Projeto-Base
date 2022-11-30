@@ -97,7 +97,7 @@ export class OrdemUpdateComponent implements OnInit {
   update(): void {
     this.ordemService.create(this.ordem).subscribe(resposta => {
       this.toastService.success('Ordem de Manuteção Atualizada com sucesso', 'Atualizando Ordem de Manutebção');
-      this.router.navigate(['chamados']);
+      this.router.navigate(['ordens']);
     }, ex => {
       console.log(ex);
       

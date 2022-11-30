@@ -67,8 +67,8 @@ export class OrdemCreateComponent implements OnInit {
 
   create(): void {
     this.ordemService.create(this.ordem).subscribe(resposta => {
-      this.toastService.success('Chamado criado com sucesso', 'Novo chamado');
-      this.router.navigate(['chamados']);
+      this.toastService.success('Ordem de Manutenção criado com sucesso', 'Nova OM');
+      this.router.navigate(['ordens']);
     }, ex => {
       console.log(ex);
       
