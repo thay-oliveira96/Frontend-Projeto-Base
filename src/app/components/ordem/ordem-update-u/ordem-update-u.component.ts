@@ -29,7 +29,7 @@ export class OrdemUpdateUComponent implements OnInit {
     obsTec:      '',
     tecnico:     1,
     cliente:     '',
-    gestor:      11,
+    gestor:      10,
     maquina:     '', 
     nomeCliente: '',
     nomeTecnico: '',
@@ -79,7 +79,7 @@ export class OrdemUpdateUComponent implements OnInit {
 
   update(): void {
     this.ordemService.create(this.ordem).subscribe(resposta => {
-      this.toastService.success('Ordem de Manuteção Atualizada com sucesso', 'Atualizando Ordem de Manutebção');
+      this.toastService.success('Ordem de Manuteção Atualizada com sucesso', 'Atualizando Ordem de Manutenção');
       this.router.navigate(['ordens']);
     }, ex => {
       console.log(ex);

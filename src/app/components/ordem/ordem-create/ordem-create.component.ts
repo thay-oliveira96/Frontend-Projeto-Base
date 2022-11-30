@@ -28,7 +28,7 @@ export class OrdemCreateComponent implements OnInit {
     obsTec:      '',
     tecnico:     1,
     cliente:     '',
-    gestor:      11,
+    gestor:      10,
     maquina:     '', 
     nomeCliente: '',
     nomeTecnico: '',
