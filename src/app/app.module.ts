@@ -31,40 +31,19 @@ import { MatCardModule } from '@angular/material/card';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
-import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { NgxMaskModule } from 'ngx-mask';
-import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
-import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
-import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
-import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
-import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
-import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
-import { GestorListComponent } from './components/gestor/gestor-list/gestor-list.component';
-import { GestorCreateComponent } from './components/gestor/gestor-create/gestor-create.component';
-import { GestorUpdateComponent } from './components/gestor/gestor-update/gestor-update.component';
-import { GestorDeleteComponent } from './components/gestor/gestor-delete/gestor-delete.component';
-import { MaquinaCreateComponent } from './components/maquina/maquina-create/maquina-create.component';
-import { MaquinaUpdateComponent } from './components/maquina/maquina-update/maquina-update.component';
-import { MaquinaDeleteComponent } from './components/maquina/maquina-delete/maquina-delete.component';
-import { MaquinaListComponent } from './components/maquina/maquina-list/maquina-list.component';
-import { DepartamentosCreateComponent } from './components/departamentos/departamentos-create/departamentos-create.component';
-import { DepartamentosListComponent } from './components/departamentos/departamentos-list/departamentos-list.component';
-import { DepartamentosUpdateComponent } from './components/departamentos/departamentos-update/departamentos-update.component';
-import { DepartamentosDeleteComponent } from './components/departamentos/departamentos-delete/departamentos-delete.component';
-import { DefeitosCreateComponent } from './components/defeitos/defeitos-create/defeitos-create.component';
-import { DefeitosListComponent } from './components/defeitos/defeitos-list/defeitos-list.component';
-import { DefeitosUpdateComponent } from './components/defeitos/defeitos-update/defeitos-update.component';
-import { DefeitosDeleteComponent } from './components/defeitos/defeitos-delete/defeitos-delete.component';
 import { CommonModule } from '@angular/common';
-import { OrdemCreateComponent } from './components/ordem/ordem-create/ordem-create.component';
-import { OrdemListComponent } from './components/ordem/ordem-list/ordem-list.component';
-import { OrdemReadComponent } from './components/ordem/ordem-read/ordem-read.component';
-import { OrdemUpdateComponent } from './components/ordem/ordem-update/ordem-update.component';
-import { OrdemUpdateUComponent } from './components/ordem/ordem-update-u/ordem-update-u.component';
+import { UsuarioComumCreateComponent } from './components/usuario-comum/usuario-comum-create/usuario-comum-create.component';
+import { UsuarioComumDeleteComponent } from './components/usuario-comum/usuario-comum-delete/usuario-comum-delete.component';
+import { UsuarioComumListComponent } from './components/usuario-comum/usuario-comum-list/usuario-comum-list.component';
+import { UsuarioComumUpdateComponent } from './components/usuario-comum/usuario-comum-update/usuario-comum-update.component';
+import { AdministradorCreateComponent } from './components/administrador/administrador-create/administrador-create.component';
+import { AdministradorUpdateComponent } from './components/administrador/administrador-update/administrador-update.component';
+import { AdministradorDeleteComponent } from './components/administrador/administrador-delete/administrador-delete.component';
+import { AdministradorListComponent } from './components/administrador/administrador-list/administrador-list.component';
 
 @NgModule({
   declarations: [
@@ -72,37 +51,15 @@ import { OrdemUpdateUComponent } from './components/ordem/ordem-update-u/ordem-u
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    TecnicoListComponent,
     LoginComponent,
-    TecnicoCreateComponent,
-    TecnicoUpdateComponent,
-    TecnicoDeleteComponent,
-    ClienteCreateComponent,
-    ClienteDeleteComponent,
-    ClienteListComponent,
-    ClienteUpdateComponent,
-    GestorListComponent,
-    GestorCreateComponent,
-    GestorUpdateComponent,
-    GestorDeleteComponent,
-    MaquinaCreateComponent,
-    MaquinaUpdateComponent,
-    MaquinaDeleteComponent,
-    MaquinaListComponent,
-    DepartamentosCreateComponent,
-    DepartamentosListComponent,
-    DepartamentosUpdateComponent,
-    DepartamentosDeleteComponent,
-    DefeitosCreateComponent,
-    DefeitosListComponent,
-    DefeitosUpdateComponent,
-    DefeitosDeleteComponent,
-    OrdemCreateComponent,
-    OrdemListComponent,
-    OrdemReadComponent,
-    OrdemUpdateComponent,
-    OrdemUpdateUComponent,
-
+    UsuarioComumCreateComponent,
+    UsuarioComumDeleteComponent,
+    UsuarioComumListComponent,
+    UsuarioComumUpdateComponent,
+    AdministradorCreateComponent,
+    AdministradorUpdateComponent,
+    AdministradorDeleteComponent,
+    AdministradorListComponent,
   ],
   imports: [
     BrowserModule,
