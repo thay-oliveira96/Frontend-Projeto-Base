@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,7 +9,13 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   usuarioLogado: string = "Administrador do Sistema"; // Simulação de usuário logado
+  @Input() drawer!: MatDrawer;
 
+  toggleDrawer() {
+    if (this.drawer) {
+      this.drawer.toggle();
+    }
+  }
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}

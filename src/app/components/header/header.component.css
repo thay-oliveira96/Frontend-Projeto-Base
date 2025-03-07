@@ -1,12 +1,14 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #afb2b6;
-    color: white;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    height: 3rem; /* Reduzindo a altura */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #afb2b6;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  height: 3rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .username {

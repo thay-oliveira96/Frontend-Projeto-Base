@@ -1,29 +1,36 @@
 .container {
-   height: 100%; 
-}
-/*Esse item é as configurações do menu lateral como cor, tamanho e etc.*/
-.sidenav {
-   width: 13rem;
-   color: white;
-   background: rgb(2,0,36);
-   background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%, rgba(0,212,255,1) 100%);
+  height: 100%; 
 }
 
-img {
-   width: 100%;
-   height: 7rem;
-   margin: .8rem auto 1rem auto;
+.sidenav {
+  width: 13rem;
+  color: white;
+  background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%, rgba(0,212,255,1) 100%);
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidenav.collapsed {
+  width: 4rem;
+}
+
+.sidenav.collapsed .nav-list span {
+  display: none;
+}
+
+.sidenav.collapsed .nav-list a {
+  justify-content: center;
+}
+
+.sidenav.collapsed .nav-list i {
+  margin-right: 0;
 }
 
 .sidenav a {
-   color: white;
+  color: white;
+}
 
-}
 .sidenav i {
-   margin-right: .6rem;  
-}
-.menu {
-   margin: 1rem 0 0 1rem;
-   color: white;
-   background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%, rgba(0,212,255,1) 100%);
+  margin-right: .6rem;
+  transition: margin 0.3s ease;
 }
