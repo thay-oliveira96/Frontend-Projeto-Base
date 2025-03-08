@@ -1,26 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
-import { AuthService } from 'src/app/services/auth.service';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  usuarioLogado: string = "Administrador do Sistema"; // Simulação de usuário logado
-  @Input() drawer!: MatDrawer;
+export class HeaderComponent {
+  @Output() toggleMenu = new EventEmitter<void>();
+  isMenuCollapsed = false;
+  usuarioLogado = "Administrador";
 
-  toggleDrawer() {
-    if (this.drawer) {
-      this.drawer.toggle();
-    }
+  onToggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+    this.toggleMenu.emit();
   }
-  constructor(private authService: AuthService) {}
-
-  ngOnInit(): void {}
 
   logout() {
-    this.authService.logout();
+    // Lógica de logout
   }
 }

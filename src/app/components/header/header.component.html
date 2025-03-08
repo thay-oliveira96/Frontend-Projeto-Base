@@ -1,9 +1,12 @@
 <header class="header">
-  <button mat-icon-button (click)="toggleDrawer()">
-      <mat-icon>menu</mat-icon>
-  </button>
-  <span class="username">Bem-vindo, {{ usuarioLogado }}</span>
-  <button mat-button class="logout-btn" (click)="logout()">
-    <mat-icon>logout</mat-icon> Sair
-  </button>
+  <div class="header-content">
+      <button mat-icon-button (click)="onToggleMenu()">
+          <mat-icon>{{ isMenuCollapsed ? 'menu_open' : 'menu' }}</mat-icon>
+      </button>
+      <span class="username">Bem-vindo, {{ usuarioLogado }}</span>
+      <button mat-button class="logout-btn" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Sair</span>
+      </button>
+  </div>
 </header>

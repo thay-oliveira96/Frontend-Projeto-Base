@@ -1,29 +1,16 @@
+/* header.component.css */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #afb2b6;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  height: 3rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.username {
-    font-weight: bold;
-}
-
-.logout-btn {
+    position: fixed;
+    top: 0;
+    left: 240px; /* Posicionamento inicial */
+    background: #afb2b6;
     color: white;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    z-index: 999;
+    width: calc(100% - 240px); /* Largura inicial */
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1); /* Transição completa */
 }
 
-.logout-btn mat-icon {
-    margin-right: 0.5rem;
+.content-container.collapsed {
+    left: 30px; /* Posicionamento quando recolhido */
+    width: calc(100% - 30px); /* Largura ajustada */
 }

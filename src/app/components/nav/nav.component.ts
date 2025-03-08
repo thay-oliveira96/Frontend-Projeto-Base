@@ -11,6 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavComponent implements OnInit {
   @ViewChild('drawer') drawer!: MatDrawer;
+  isCollapsed = false;
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
+  }
   constructor(private router: Router,
     private authService: AuthService,
     private toast: ToastrService) { }

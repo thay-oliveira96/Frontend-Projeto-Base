@@ -1,27 +1,34 @@
-<mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <mat-nav-list class="nav-list">
-        <a mat-list-item routerLink="home">
-            <i class="material-icons">home</i>
-            <span>home</span>
-        </a>
-      <a mat-list-item routerLink="usuariocomum">
-        <i class="material-icons">person</i>
-        <span>Usuário</span>
-    </a>
-    <a mat-list-item routerLink="administrador">
-      <i class="material-icons">supervisor_account</i>
-      <span>Administrador</span>
-  </a>
-  <a mat-list-item (click)="logout()">
-    <i class="material-icons">logout</i>
-    <span>Logout</span>
-</a>
-    </mat-nav-list>
-  </mat-drawer>
+<mat-drawer-container class="main-container" autosize>
+    <mat-drawer #drawer 
+               class="sidenav" 
+               mode="side"
+               [opened]="true"
+               [class.collapsed]="isCollapsed">
+        <mat-nav-list class="nav-list">
+            <!-- Itens do menu -->
+            <a mat-list-item routerLink="home">
+                <i class="material-icons">home</i>
+                <span class="menu-text">Home</span>
+            </a>
+            <a mat-list-item routerLink="usuariocomum">
+                <i class="material-icons">person</i>
+                <span class="menu-text">Usuário</span>
+            </a>
+            <a mat-list-item routerLink="administrador">
+                <i class="material-icons">supervisor_account</i>
+                <span class="menu-text">Administrador</span>
+            </a>
+            <a mat-list-item (click)="logout()">
+                <i class="material-icons">logout</i>
+                <span class="menu-text">Logout</span>
+            </a>
+        </mat-nav-list>
+    </mat-drawer>
 
-  <div class="sidenav-content">
-    <app-header [drawer]="drawer"></app-header>
-    <router-outlet></router-outlet>
-  </div>
+    <div class="content-container" [class.collapsed]="isCollapsed">
+        <app-header (toggleMenu)="toggleMenu()"></app-header>
+        <div class="page-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </mat-drawer-container>

@@ -1,36 +1,48 @@
-.container {
-  height: 100%; 
+.main-container {
+    height: 100vh;
+    display: flex;
 }
 
 .sidenav {
-  width: 13rem;
-  color: white;
-  background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%, rgba(0,212,255,1) 100%);
-  transition: width 0.3s ease;
-  overflow: hidden;
+    width: 240px;
+    background: linear-gradient(90deg, rgba(112,207,246,1) 100%, rgba(6,156,171,1) 100%);
+    transition: width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    overflow-x: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 .sidenav.collapsed {
-  width: 4rem;
+    width: 60px;
 }
 
-.sidenav.collapsed .nav-list span {
-  display: none;
+.nav-list {
+    padding-top: 70px; /* Espaço para o header */
 }
 
-.sidenav.collapsed .nav-list a {
-  justify-content: center;
+.menu-text {
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
 }
 
-.sidenav.collapsed .nav-list i {
-  margin-right: 0;
+.sidenav.collapsed .menu-text {
+    opacity: 0;
+    width: 0;
 }
 
-.sidenav a {
-  color: white;
+.content-container {
+    flex: 1;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    
 }
 
-.sidenav i {
-  margin-right: .6rem;
-  transition: margin 0.3s ease;
+.content-container.collapsed {
+    margin-left: 60px;
+}
+
+.page-content {
+    padding: 20px;
+    margin-top: 60px; /* Altura do header */
+    height: calc(100vh - 60px);
+    overflow-y: auto;
 }
